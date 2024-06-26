@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Indie Flower', sans-serif;
+}
+.cabecalho{
+    background:#383D58 ;
+    color: white ;
+    display: flex;
+    justify-content: space-around;
+}
+.cabecalho-img{
+    width: 40%;
+}
+.cabecalho-lista-item{
+    display: inline-block;
+    margin: 0 16px;
+    padding:24px 0 ;
+    font-size: 34px;
+}
+.img-escola{
+    width: 30%;
+}
+.escola{
+    background-image: linear-gradient(#ffffff, #f7f7f7);
+    color: rgb(18, 15, 58);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 0;
+}
+.escola-conteudo{
+    width: 35%;
+}
+.titulo-escola{
+    padding: 24px 0;
+}
+.img-estudante{
+    width: 120px;
+}
+.icone-estudante{
+    width: 40px;
+}
+.estudantes{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+.estudante-titulo{
+    text-align: center;
+}
