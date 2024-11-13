@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Compra - Academia Fit</title>
+    <link rel="stylesheet" href="styles-compra.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Academia Fit</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Voltar aos Produtos</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="compra">
+        <section class="produto-info">
+            <div class="produto-imagem">
+                <img id="produto-img" src="img/barrinha.jpg" alt="Produto">
+            </div>
+            <div class="produto-detalhes">
+                <h3 id="produto-nome">Produto</h3>
+                <p id="produto-descricao">Descrição do produto.</p>
+                <p id="produto-preco" class="preco">R$ 0,00</p>
+            </div>
+        </section>
+
+        <section class="pagamento">
+            <h3>Escolha uma forma de pagamento</h3>
+            <form action="#" method="post">
+                <div class="opcao-pagamento">
+                    <label>
+                        <input type="radio" name="pagamento" value="pix" id="pix">
+                        <span>PIX</span>
+                    </label>
+                </div>
+                <div class="opcao-pagamento">
+                    <label>
+                        <input type="radio" name="pagamento" value="cartao" id="cartao">
+                        <span>Cartão de Crédito</span>
+                    </label>
+                </div>
+                <div class="opcao-pagamento">
+                    <label>
+                        <input type="radio" name="pagamento" value="boleto" id="boleto">
+                        <span>Boleto Bancário</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn-finalizar">Finalizar Compra</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Academia Fit. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const produto = params.get('produto');
+        
+        function carregarProduto(produto) {
+            const produtoNome = document.getElementById('produto-nome');
+            const produtoDescricao = document.getElementById('produto-descricao');
+            const produtoPreco = document.getElementById('produto-preco');
+            const produtoImg = document.getElementById('produto-img');
+            
+            switch (produto) {
+                case 'halteres':
+                    produtoNome.textContent = 'Halteres';
+                    produtoDescricao.textContent = 'Halteres de diversos pesos para melhorar sua musculação.';
+                    produtoPreco.textContent = 'R$ 150,00';
+                    produtoImg.src = 'https://via.placeholder.com/300x200';
+                    break;
+                case 'colchonete':
+                    produtoNome.textContent = 'Colchonete';
+                    produtoDescricao.textContent = 'Colchonete macio para seus treinos de solo.';
+                    produtoPreco.textContent = 'R$ 80,00';
+                    produtoImg.src = 'https://via.placeholder.com/300x200';
+                    break;
+                default:
+                    produtoNome.textContent = 'Produto Não Encontrado';
+                    produtoDescricao.textContent = '';
+                    produtoPreco.textContent = '';
+                    produtoImg.src = '';
+                    break;
+            }
+        }
+
+        carregarProduto(produto);
+    </script>
+</body>
+</html>
+ 
